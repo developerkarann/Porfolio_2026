@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #0f0f0f;
+  --color-dark-muted: #1a1a1a;
+  --color-accent: #facc15;
+  --color-accent-hover: #eab308;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-dark text-white antialiased;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+/* Force Technologies section icons to use parent color (Devicon may set its own) */
+#technologies [class^="devicon-"] {
+  color: inherit !important;
+}
+#technologies [class^="devicon-"]::before {
+  color: inherit !important;
+}
+
+.about-tech-icons [class^="devicon-"],
+.about-tech-icons [class^="devicon-"]::before {
+  color: inherit !important;
+}
