@@ -47,33 +47,6 @@ export default function AboutMe() {
               From database design to Dockerization, deployment, and DevOps. I don’t just build applications; I create scalable digital ecosystems designed for long-term growth and performance.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-6 mb-8">
-              <div>
-                <h4 className="font-display font-semibold text-accent text-sm uppercase tracking-wide mb-3">Frontend</h4>
-                <ul className="space-y-1.5 text-white/80 text-sm">
-                  {frontend.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-accent text-sm uppercase tracking-wide mb-3">Backend</h4>
-                <ul className="space-y-1.5 text-white/80 text-sm">
-                  {backend.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-accent text-sm uppercase tracking-wide mb-3">Tools</h4>
-                <ul className="space-y-1.5 text-white/80 text-sm">
-                  {tools.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
             <a
               href="#"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"

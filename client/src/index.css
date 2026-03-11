@@ -17,9 +17,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
-    @apply bg-dark text-white antialiased;
+    @apply bg-dark text-white antialiased overflow-x-hidden;
     font-family: var(--font-sans);
   }
   h1, h2, h3 {

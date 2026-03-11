@@ -27,19 +27,19 @@ export const CONTACT_COPY = {
 export const SOCIAL_LINKS = [
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/karan-pal-developer/',
     icon: 'linkedin',
     description: 'Professional profile & experience',
   },
   {
     name: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/developerkarann',
     icon: 'github',
     description: 'Code & open source',
   },
   {
     name: 'Twitter',
-    href: 'https://twitter.com',
+    href: 'https://x.com/developerkarann',
     icon: 'twitter',
     description: 'Thoughts & updates',
   },

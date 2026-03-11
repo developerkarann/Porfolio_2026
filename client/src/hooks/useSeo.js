@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 
+const DEFAULT_TITLE = 'Karan Pal | Software Developer';
+
 export function useSeo({ title, description }) {
   useEffect(() => {
-    const prevTitle = document.title;
-    if (title) document.title = `${title} | Karan Pal - Full Stack Developer`;
+    // Keep a single title site-wide (from index.html); do not change document.title per page
+    document.title = DEFAULT_TITLE;
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -15,7 +17,7 @@ export function useSeo({ title, description }) {
     if (description) meta.setAttribute('content', description);
 
     return () => {
-      if (title) document.title = prevTitle;
+      document.title = DEFAULT_TITLE;
       if (description && meta) meta.setAttribute('content', prevContent || '');
     };
   }, [title, description]);

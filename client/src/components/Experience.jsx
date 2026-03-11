@@ -1,7 +1,7 @@
 const experiences = [
   { role: 'Software Developer', company: 'Aggra Technologies Pvt. Ltd.', period: '2025 - Present', description: 'Leading design systems and user research for product teams.' },
-  { role: 'Full Stack Developer Trainee', company: 'Alma Better', period: '2017 - 2020', description: 'Shipped multiple products from concept to launch.' },
-  { role: 'Full Stack Developer', company: 'UUP Corps', period: '2015 - 2017', description: 'Improved conversion and usability across web and mobile.' },
+  { role: 'Full Stack Developer', company: 'Alma Better', period: '2024 - 2025', description: 'Shipped multiple products from concept to launch.' },
+  { role: 'Full Stack Developer Intern', company: 'Baoiam Innovation Pvt. Ltd.', period: '2023 - 2023', description: 'Improved conversion and usability across web and mobile.' },
 ];
 
 export default function Experience() {

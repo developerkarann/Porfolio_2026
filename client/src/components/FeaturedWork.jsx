@@ -3,7 +3,8 @@ import { PROJECTS_LIST } from '../data/projectsData';
 
 const featuredProjects = PROJECTS_LIST.filter((p) => p.featured);
 
-const linkClass = "inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg transition-colors";
+const linkClass =
+  "inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-colors";
 const primaryBtn = "bg-accent text-dark hover:bg-accent-hover";
 const secondaryBtn = "border border-white/20 text-white hover:border-accent hover:text-accent";
 
@@ -27,18 +28,18 @@ export default function FeaturedWork() {
         </p>
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2 mb-12 px-6 py-3.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
+          className="inline-flex items-center gap-2 mb-12 px-4 py-2.5 sm:px-6 sm:py-3.5 text-sm sm:text-base bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
         >
           Explore all Projects
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </Link>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {featuredProjects.map((project) => (
             <article
               key={project.slug}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] min-h-[280px] sm:min-h-[320px] bg-dark-muted"
+              className="group relative w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] min-h-[260px] sm:min-h-[300px] bg-dark-muted"
             >
               <img
                 src={project.image}
@@ -50,8 +51,10 @@ export default function FeaturedWork() {
                   {project.category}
                 </span>
                 <h4 className="font-display font-semibold text-lg sm:text-xl text-white mb-2">{project.title}</h4>
-                <p className="text-white/80 text-sm sm:text-base line-clamp-2 mb-4">{project.shortDescription}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-white/80 text-sm sm:text-base line-clamp-2 mb-4">
+                  {project.shortDescription}
+                </p>
+                <div className="flex flex-wrap gap-2 w-full justify-center sm:justify-start">
                   <a
                     href={project.sourceUrl || '#'}
                     target="_blank"

@@ -1,4 +1,4 @@
-const tags = ['#SOFTWARE DEVELOPER', '#MERN STACK', '#REACT', '#NODE.JS'];
+const tags = ['#SOFTWARE DEVELOPER'];
 
 export default function Hero() {
   return (
@@ -34,7 +34,7 @@ export default function Hero() {
           <div className="relative flex justify-center lg:justify-end order-1 lg:order-1">
             <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
               <img
-                src="./main2.png"
+                src="./main3.png"
                 alt="Karan Pal"
                 className="w-full h-full object-cover object-top"
               />
