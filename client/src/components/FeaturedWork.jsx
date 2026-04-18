@@ -39,7 +39,7 @@ export default function FeaturedWork() {
           {featuredProjects.map((project) => (
             <article
               key={project.slug}
-              className="group relative w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] min-h-[260px] sm:min-h-[300px] bg-dark-muted"
+              className="group relative w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] min-h-[450px] bg-dark-muted"
             >
               <img
                 src={project.image}
@@ -55,7 +55,7 @@ export default function FeaturedWork() {
                   {project.shortDescription}
                 </p>
                 <div className="flex flex-wrap gap-2 w-full justify-center sm:justify-start">
-                  <a
+                  {/* <a
                     href={project.sourceUrl || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -66,7 +66,7 @@ export default function FeaturedWork() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
-                  </a>
+                  </a> */}
                   <a
                     href={project.liveUrl || '#'}
                     target="_blank"

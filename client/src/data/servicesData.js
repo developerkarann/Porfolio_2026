@@ -28,14 +28,14 @@ export const SERVICES_LIST = [
     id: 'backend-development',
     title: 'Backend Development',
     description: 'Robust APIs, databases, and server-side logic—REST/GraphQL, authentication, and cloud deployment.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['REST & GraphQL', 'Databases', 'Auth', 'Cloud'],
   },
   {
     id: 'it-consultancy-networking',
     title: 'IT Consultancy & Networking',
     description: 'Infrastructure planning, network design, security audits, and technology strategy to align IT with business goals.',
-    image: 'https://images.unsplash.com/photo-1551431009-a22ee0f4e6d7?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1573165265437-f5e267bb3db6?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Infrastructure', 'Security', 'Strategy', 'Integration'],
   },
 ];

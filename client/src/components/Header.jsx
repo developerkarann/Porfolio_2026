@@ -27,7 +27,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <Link to="/" className="flex items-center gap-2">
           {/* <span className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-dark font-bold text-lg">K</span> */}
-          <span className="font-display font-semibold text-lg text-white">Karan <span className="text-accent">Pal</span></span>
+          <span className="font-display font-semibold md:text-4xl text-white">Karan <span className="text-accent">Pal</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

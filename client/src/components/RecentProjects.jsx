@@ -11,25 +11,27 @@ export default function RecentProjects() {
             </span>
             <h2 className="font-display font-bold text-2xl lg:text-3xl text-white">Recent Projects</h2>
           </div>
-          <a href="#projects" className="text-sm text-white/70 hover:text-accent transition-colors inline-flex items-center gap-1">
+          <a href="/projects" className="text-sm text-white/70 hover:text-accent transition-colors inline-flex items-center gap-1">
             Explore More Projects
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
         <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
           <img
-            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&h=600&fit=crop"
-            alt="M-Mockups: MacBook Air"
+            src="/src/assets/img/projects/moneytorin.png"
+            alt="Moneytor.in"
             className="w-full h-[320px] sm:h-[400px] object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <p className="text-white/70 text-sm">LuminUI</p>
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">M-Mockups: MacBook Air</h3>
+              <p className="text-white/70 text-sm">Fintech</p>
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">Moneytor.in</h3>
             </div>
             <a
-              href="#"
+              href="https://moneytor.in"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 self-start sm:self-center px-5 py-2.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
               View Project
