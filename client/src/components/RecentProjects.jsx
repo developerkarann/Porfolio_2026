@@ -18,7 +18,7 @@ export default function RecentProjects() {
         </div>
         <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
           <img
-            src="/src/assets/img/projects/moneytorin.png"
+            src="./moneytorin.png"
             alt="Moneytor.in"
             className="w-full h-[320px] sm:h-[400px] object-cover object-center"
           />
