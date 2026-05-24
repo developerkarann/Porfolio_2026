@@ -1,74 +1,221 @@
-const tags = ['#SOFTWARE DEVELOPER'];
+import { useCallback, useEffect, useState } from 'react';
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  AnimatePresence,
+} from 'framer-motion';
+import MagneticButton from './hero/MagneticButton';
+import HeroFloatingElements from './hero/HeroFloatingElements';
+import HeroParticles from './hero/HeroParticles';
+
+const SUBHEADINGS = [
+  'Building Scalable Digital Experiences',
+  'Full Stack Software Developer',
+  'Crafting High-Performance Web Applications',
+  'Developing Robust Backend Systems',
+  'DevOps Engineer',
+];
+
+const revealContainer = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.11, delayChildren: 0.45 },
+  },
+};
+
+const revealItem = {
+  hidden: { opacity: 0, y: 36, filter: 'blur(14px)' },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function Hero() {
+  const [subIndex, setSubIndex] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothX = useSpring(mouseX, { stiffness: 55, damping: 22 });
+  const smoothY = useSpring(mouseY, { stiffness: 55, damping: 22 });
+
+  const bgX = useTransform(smoothX, [-0.5, 0.5], ['-2%', '2%']);
+  const bgY = useTransform(smoothY, [-0.5, 0.5], ['-1.5%', '1.5%']);
+  const bgScale = useTransform(smoothY, [-0.5, 0.5], [1.06, 1.1]);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setReducedMotion(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return undefined;
+    const id = setInterval(() => {
+      setSubIndex((i) => (i + 1) % SUBHEADINGS.length);
+    }, 4200);
+    return () => clearInterval(id);
+  }, [reducedMotion]);
+
+  const onPointerMove = useCallback((e) => {
+    const nx = e.clientX / window.innerWidth - 0.5;
+    const ny = e.clientY / window.innerHeight - 0.5;
+    mouseX.set(nx);
+    mouseY.set(ny);
+  }, [mouseX, mouseY]);
+
+  const onPointerLeave = useCallback(() => {
+    mouseX.set(0);
+    mouseY.set(0);
+  }, [mouseX, mouseY]);
+
   return (
-    <section id="home" className="min-h-screen pt-24 lg:pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Subtle warm glow - stronger on the right */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_80%_40%,rgba(251,191,36,0.12),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(250,204,21,0.06),transparent)]" />
+    <section
+      id="home"
+      className="relative h-screen min-h-[640px] w-full overflow-hidden"
+      onMouseMove={reducedMotion ? undefined : onPointerMove}
+      onMouseLeave={reducedMotion ? undefined : onPointerLeave}
+    >
+      <motion.div
+        className="absolute inset-0 will-change-transform"
+        style={reducedMotion ? undefined : { x: bgX, y: bgY, scale: bgScale }}
+      >
+        <motion.img
+          src="/main.jpeg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center scale-105"
+          initial={reducedMotion ? false : { scale: 1.12 }}
+          animate={reducedMotion ? undefined : { scale: 1.05 }}
+          transition={{ duration: 14, ease: 'easeOut' }}
+          draggable={false}
+        />
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto relative">
-        {/* 1. Name - large, centered */}
-        <div className="text-center mb-6">
-          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight">
-            KARAN PAL
-          </h1>
-        </div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/55 to-dark/95"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_35%,rgba(250,204,21,0.14),transparent_55%)]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_20%,rgba(251,191,36,0.08),transparent_50%)]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 opacity-[0.35] mix-blend-overlay"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(250,204,21,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(250,204,21,0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: '64px 64px',
+        }}
+        aria-hidden
+      />
 
-        {/* 2. Tags - centered row below name */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-14 lg:mb-16">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center text-white/90 text-sm sm:text-base font-medium"
-            >
-              <span className="text-accent">#</span>
-              {tag.replace('#', '')}
+      <motion.div
+        className="absolute -top-32 left-1/4 w-[420px] h-[420px] rounded-full bg-amber-500/20 blur-[120px] pointer-events-none"
+        animate={reducedMotion ? undefined : { x: [0, 40, 0], y: [0, 25, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden
+      />
+      <motion.div
+        className="absolute bottom-0 right-1/4 w-[360px] h-[360px] rounded-full bg-yellow-500/10 blur-[100px] pointer-events-none"
+        animate={reducedMotion ? undefined : { x: [0, -30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        aria-hidden
+      />
+
+      <HeroParticles reduced={reducedMotion} />
+      <HeroFloatingElements smoothX={smoothX} smoothY={smoothY} reduced={reducedMotion} />
+
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 sm:px-8 pt-20 pb-16 text-center">
+        <motion.div
+          variants={revealContainer}
+          initial="hidden"
+          animate="show"
+          className="flex max-w-4xl flex-col items-center"
+        >
+
+
+          <motion.h1
+            variants={revealItem}
+            className="font-display font-bold text-[clamp(2.75rem,10vw,6.5rem)] leading-[0.92] tracking-tight text-white"
+          >
+            <span className="bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(250,204,21,0.25)]">
+              KARAN
             </span>
-          ))}
-        </div>
+            <br />
+            <span className="bg-gradient-to-r from-accent via-amber-200 to-accent bg-clip-text text-transparent">
+              PAL
+            </span>
+          </motion.h1>
 
-        {/* 3. Two-column block: Left = image, Right = intro + button. Mobile: image first, then content */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-25 items-center">
-          {/* Left - Image (first on mobile) */}
-          <div className="relative flex justify-center lg:justify-end order-1 lg:order-1">
-            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <img
-                src="./main3.png"
-                alt="Karan Pal"
-                className="w-full h-full object-cover object-top"
-              />
-              {/* Optional subtle grid/glow overlay for tech feel */}
-              <div
-                className="absolute inset-0 opacity-30"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 50% 50%, rgba(251,191,36,0.15) 0%, transparent 60%),
-                    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)`,
-                  backgroundSize: '20px 20px',
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />
-            </div>
-          </div>
+          <motion.div variants={revealItem} className="mt-5 h-8 sm:h-9 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={subIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                className="text-sm sm:text-lg md:text-2xl text-white/85 font-light tracking-wide"
+              >
+                {SUBHEADINGS[subIndex]}
+              </motion.p>
+            </AnimatePresence>
+          </motion.div>
 
-          {/* Right - Description (intro) + Button (second on mobile) */}
-          <div className="order-2 lg:order-2">
-            <p className="text-white/90 text-base sm:text-lg lg:text-xl leading-relaxed">
-              I design and build high-performance, scalable, and secure web applications that power modern businesses. From intuitive frontends to robust distributed backends, I transform complex ideas into seamless digital experiences. Clean architecture, optimized performance, and production-ready deployments. Let's bring your ideas to life!
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
-            >
-              Hire Me
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <motion.p
+            variants={revealItem}
+            className="mt-6 max-w-xl text-sm sm:text-base text-white/60 leading-relaxed font-light"
+          >
+            I architect and ship high-performance web platforms—from polished interfaces to
+            distributed backends—built for scale, security, and production impact.
+          </motion.p>
+
+          <motion.div
+            variants={revealItem}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5"
+          >
+            <MagneticButton href="/#projects" variant="primary" className="group min-w-[160px]">
+              View Projects
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
-          </div>
-        </div>
+            </MagneticButton>
+            <MagneticButton href="/#contact" variant="secondary" className="min-w-[140px]">
+              Hire Me
+            </MagneticButton>
+          </motion.div>
+        </motion.div>
       </div>
+
+      <motion.a
+        href="#projects"
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-accent transition-colors"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
+        aria-label="Scroll to projects"
+      >
+
+
+      </motion.a>
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-dark to-transparent z-[5]"
+        aria-hidden
+      />
     </section>
   );
 }

@@ -10,8 +10,13 @@
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @layer base {
@@ -19,11 +24,15 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+
   body {
     @apply bg-dark text-white antialiased overflow-x-hidden;
     font-family: var(--font-sans);
   }
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-display);
   }
 }
@@ -36,6 +45,7 @@
 #technologies [class^="devicon-"] {
   color: inherit !important;
 }
+
 #technologies [class^="devicon-"]::before {
   color: inherit !important;
 }
