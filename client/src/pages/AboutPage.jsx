@@ -29,7 +29,7 @@ export default function AboutPage() {
         <section className="relative px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop"
+              src="/main.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />

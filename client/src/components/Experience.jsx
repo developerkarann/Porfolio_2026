@@ -1,7 +1,7 @@
 const experiences = [
-  { role: 'Software Developer', company: 'Aggra Technologies Pvt. Ltd.', period: '2025 - Present', description: 'Leading design systems and user research for product teams.' },
-  { role: 'Full Stack Developer', company: 'Alma Better', period: '2024 - 2025', description: 'Shipped multiple products from concept to launch.' },
-  { role: 'Full Stack Developer Intern', company: 'Baoiam Innovation Pvt. Ltd.', period: '2023 - 2023', description: 'Improved conversion and usability across web and mobile.' },
+  { role: 'Software Developer', company: 'Aggra Technologies Pvt. Ltd.', period: '2025 - Present', description: 'Built and shipped production fintech systems across a multi-product microservices platform serving banks, NBFCs, and retail users for debt recovery and borrower care.' },
+  { role: 'Full Stack Developer Trainee', company: 'IIT Guwahati & Alma Better', period: '2024 - 2025', description: 'Built hands-on projects using MongoDB, Express.js, React, and Node.js with modern UI/UX practices.' },
+  { role: 'Full Stack Developer Intern', company: 'Baoiam Innovation Pvt. Ltd.', period: '2023 - 2023', description: 'Worked closely with senior developers and cross-functional teams to deliver high-quality software solutions.' },
 ];
 
 export default function Experience() {
@@ -56,6 +56,12 @@ export default function Experience() {
                   karanapal03040@gmail.com
                 </a>
               </p>
+
+              <p className="text-white/80 text-sm">
+                <span className="text-white/50 block mb-1">Phone number</span>
+                +91 8869012507
+              </p>
+              
             </div>
           </div>
         </div>

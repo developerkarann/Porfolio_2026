@@ -5,12 +5,22 @@
 
 export const PROJECTS_LIST = [
   {
-    slug: 'deb-collection-crm',
-    title: 'Deb Collection CRM',
+    slug: 'moneytor-collection-crm',
+    title: 'Moneytor Collection CRM',
     category: 'CRM & Business',
     shortDescription: 'End-to-end CRM for debt collection workflows, agent dashboards, and compliance reporting.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=560&fit=crop',
+    image: '/moneytorin.png',
     liveUrl: "https://portfolio.moneytor.in/signin",
+    sourceUrl: null,
+    featured: true,
+  },
+  {
+    slug: 'moneytor-care',
+    title: 'Moneytor Care',
+    category: 'CRM & Business',
+    shortDescription: 'Debt advisory tool designed to help individuals manage debt, financial hardship, and multiple loans.',
+    image: '/moneytor-care.png',
+    liveUrl: "https://moneytor.care/in",
     sourceUrl: null,
     featured: true,
   },
@@ -47,13 +57,13 @@ export const PROJECTS_LIST = [
 ];
 
 const PROJECTS_FULL = {
-  'deb-collection-crm': {
-    slug: 'deb-collection-crm',
-    title: 'Deb Collection CRM',
+  'moneytor-collection-crm': {
+    slug: 'moneytor-collection-crm',
+    title: 'Moneytor Collection CRM',
     category: 'CRM & Business',
-    metaDescription: 'Deb Collection CRM – custom CRM for debt collection: agent dashboards, workflow automation, compliance reporting. Built with React, Node.js, and PostgreSQL. Case study by Full Stack Developer.',
-    description: 'A full-stack CRM tailored for debt collection teams. The system streamlines case assignment, follow-up scheduling, and compliance documentation while giving managers real-time visibility into agent performance and pipeline health.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop',
+    metaDescription: 'Moneytor Collection CRM – end-to-end CRM for debt collection: agent dashboards, workflow automation, and compliance reporting. Built with React, Node.js, and PostgreSQL.',
+    description: 'An end-to-end CRM for debt collection teams. The system streamlines case assignment, follow-up scheduling, and compliance documentation while giving managers real-time visibility into agent performance and pipeline health.',
+    image: '/moneytorin.png',
     liveUrl: "https://portfolio.moneytor.in/signin",
     sourceUrl: null,
     features: [
@@ -64,11 +74,30 @@ const PROJECTS_FULL = {
       'Role-based access (admin, team lead, agent)',
       'Export and reporting for management',
     ],
-    technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'REST API'],
+    technologies: ['Angular', 'Node.js', 'Express', 'REST API' , 'MySQL', 'AWS', 'JWT', 'Elastic search', 'RabbitMQ', 'Redis'],
     screenshots: [
-      { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&h=600&fit=crop', alt: 'Deb Collection CRM – Dashboard overview' },
-      { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&h=600&fit=crop', alt: 'Deb Collection CRM – Case list and filters' },
-      { src: 'https://images.unsplash.com/photo-1551431009-a22ee0f4e6d7?w=1000&h=600&fit=crop', alt: 'Deb Collection CRM – Analytics and reports' },
+      { src: '/moneytorin.png', alt: 'Moneytor Collection CRM – Dashboard overview' },
+    ],
+  },
+  'moneytor-care': {
+    slug: 'moneytor-care',
+    title: 'Moneytor Care',
+    category: 'CRM & Business',
+    metaDescription: 'Moneytor Care – debt advisory tool that helps individuals manage debt, financial hardship, and multiple loans.',
+    description: 'A debt advisory tool designed to help individuals manage debt, financial hardship, and multiple loans. It gives people a clear view of what they owe and a practical path toward getting debt free.',
+    image: '/moneytor-care.png',
+    liveUrl: "https://moneytor.care/in",
+    sourceUrl: null,
+    features: [
+      'Overview of multiple loans in one place',
+      'Guidance for financial hardship and repayment',
+      'A clear path toward becoming debt free',
+      'Simple onboarding for individuals',
+      'Progress tracking across outstanding debt',
+    ],
+    technologies: ['Angular', 'Node.js', 'Express', 'REST API' , 'AWS', 'MySQL', 'JWT'],
+    screenshots: [
+      { src: '/moneytor-care.png', alt: 'Moneytor Care – Debt advisory overview' },
     ],
   },
   'crowd-funding-platform': {
@@ -77,9 +106,9 @@ const PROJECTS_FULL = {
     category: 'Fintech & Crowdfunding',
     metaDescription: 'Crowd funding platform with pledges, milestones, and Stripe. Full stack crowdfunding app – React, Node.js, MongoDB. Project case study by Full Stack Developer.',
     description: 'A crowdfunding platform that lets creators launch campaigns, set funding goals and milestones, and accept pledges. Backers can browse campaigns, pledge with Stripe, and track milestone updates—all with a clear, secure flow from signup to payout.',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop',
-    liveUrl: "https://creatorsflame.vercel.app/",
-    sourceUrl: null,
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&h=560&fit=crop',
+    liveUrl: 'https://creatorsflame.vercel.app/',
+    sourceUrl: 'https://github.com/developerkarann/CreatorsFlame',
     features: [
       'Campaign creation with goals, deadlines, and milestones',
       'Pledge tiers and Stripe payment integration',
@@ -88,9 +117,9 @@ const PROJECTS_FULL = {
       'Milestone updates and notifications',
       'Search, filters, and featured campaigns',
     ],
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'REST API'],
+    technologies: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'REST API'],
     screenshots: [
-      { src: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1000&h=600&fit=crop', alt: 'Crowd Funding Platform – Campaign discovery' },
+      { src: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&h=560&fit=crop', alt: 'Crowd Funding Platform – Campaign discovery' },
       { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&h=600&fit=crop', alt: 'Crowd Funding Platform – Campaign detail and pledge' },
       { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000&h=600&fit=crop', alt: 'Crowd Funding Platform – Creator dashboard' },
     ],
@@ -101,9 +130,9 @@ const PROJECTS_FULL = {
     category: 'E‑commerce',
     metaDescription: 'Full-featured e‑commerce platform: product catalog, cart, checkout, inventory, admin. Built with MERN stack. E‑commerce project case study by Full Stack Developer.',
     description: 'A complete e‑commerce solution with a customer-facing store (browse, search, cart, checkout) and an admin panel for products, inventory, orders, and basic analytics—designed to scale from small catalogs to larger inventories.',
-    image: 'https://images.unsplash.com/photo-1556742111-a301566d24d0?w=1200&h=630&fit=crop',
+    image: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     liveUrl: "https://vedicstore.vercel.app/",
-    sourceUrl: null,
+    sourceUrl: "https://github.com/developerkarann/VedicStore",
     features: [
       'Product catalog with categories and search',
       'Shopping cart and guest checkout',
@@ -114,7 +143,7 @@ const PROJECTS_FULL = {
     ],
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'REST API'],
     screenshots: [
-      { src: 'https://images.unsplash.com/photo-1556742111-a301566d24d0?w=1000&h=600&fit=crop', alt: 'E‑commerce Platform – Storefront and product grid' },
+      { src: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', alt: 'E‑commerce Platform – Storefront and product grid' },
       { src: 'https://images.unsplash.com/photo-1556742111-a301566d24d0?w=1000&h=600&fit=crop', alt: 'E‑commerce Platform – Product detail and cart' },
       { src: 'https://images.unsplash.com/photo-1551431009-a22ee0f4e6d7?w=1000&h=600&fit=crop', alt: 'E‑commerce Platform – Admin orders and inventory' },
     ],
@@ -125,7 +154,7 @@ const PROJECTS_FULL = {
     category: 'Healthcare',
     metaDescription: 'Navnetram Eye Care – hospital and clinic management: patient records, appointments, eye care workflows. Healthcare project for a hospital. Built with React, Node.js. Case study by Full Stack Developer.',
     description: 'A healthcare management system built for Navnetram Eye Care hospital. It covers patient registration, appointment scheduling, basic clinical notes, and clinic-specific workflows so staff can focus on patient care while keeping records and schedules in one place.',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=630&fit=crop',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&h=560&fit=crop',
     liveUrl: "https://navnetram.com",
     sourceUrl: null,
     features: [
@@ -138,7 +167,7 @@ const PROJECTS_FULL = {
     ],
     technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'REST API'],
     screenshots: [
-      { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&h=600&fit=crop', alt: 'Navnetram Eye Care – Patient and appointment dashboard' },
+      { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&h=560&fit=crop', alt: 'Navnetram Eye Care – Patient and appointment dashboard' },
       { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop', alt: 'Navnetram Eye Care – Appointment calendar' },
       { src: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=1000&h=600&fit=crop', alt: 'Navnetram Eye Care – Patient record and history' },
     ],

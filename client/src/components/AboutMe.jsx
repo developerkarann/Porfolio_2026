@@ -9,14 +9,17 @@ const backend = ['Node.js & Express', 'MongoDB & MySQL', 'RESTful APIs'];
 const tools = ['Git & Github', 'Vercel & Render', 'Postman'];
 
 const skilledIn = [
-  'Full Stack Development',
-  'RESTful API',
-  'Frontend Development',
-  'State Management',
-  'Backend Development',
-  'User Authentications',
-  'Version Control',
-  'Deployment',
+  'Full Stack Software Development',
+  'Microservices Architecture',
+  'DevOps engineering',
+  'System Design',
+  'Cloud Computing',
+  'Data Structures and Algorithms',
+  'Object-Oriented Programming',
+  'Problem Solving',
+  'Communication',
+  'Teamwork',
+  'Adaptability',
 ];
 
 export default function AboutMe() {
@@ -48,13 +51,13 @@ export default function AboutMe() {
             </p>
 
             <a
-              href="#"
+              href="https://drive.google.com/drive/folders/1MBHkY7zwZO5vpWY_wbNw3dRT8cc3-aNM" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Download Resume
+              Download My Resume
             </a>
           </div>
 
@@ -73,6 +76,10 @@ export default function AboutMe() {
                 <a href="mailto:karanapal03040@gmail.com" className="text-accent hover:underline">
                   karanapal03040@gmail.com
                 </a>
+              </p>
+              <p className="text-white/80 text-sm">
+                <span className="text-white/50 block mb-0.5">Phone number</span>
+                +91 8869012507
               </p>
             </div>
             <div className="flex gap-4 pt-2">

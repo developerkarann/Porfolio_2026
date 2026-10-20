@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { PROJECTS_LIST } from '../data/projectsData';
+import ProjectCard from '../components/ProjectCard';
 import { useSeo } from '../hooks/useSeo';
 
 const META_DESCRIPTION = 'Portfolio of full-stack projects: CRM, crowdfunding, e‑commerce, healthcare. Built with React, Node.js, PostgreSQL, MongoDB. Architecture, APIs, and user-centered design.';
@@ -73,69 +74,9 @@ export default function ProjectsPage() {
 
           {/* Project grid */}
           <section aria-label="Project list">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
               {PROJECTS_LIST.map((project) => (
-                <article
-                  key={project.slug}
-                  className="group relative rounded-2xl border border-white/10 bg-dark-muted/50 overflow-hidden hover:border-accent/30 transition-all duration-300"
-                >
-                  <div className="relative aspect-[16/9] min-h-[220px] sm:min-h-[260px] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={`${project.title} – ${project.category}`}
-                      className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="p-6 sm:p-8">
-                    <span className="text-accent text-xs font-semibold uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <h2 className="font-display font-semibold text-xl sm:text-2xl text-white mt-2 mb-3 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h2>
-                    <p className="text-white/70 text-sm sm:text-base leading-relaxed line-clamp-3 mb-5">
-                      {project.shortDescription}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4" onClick={(e) => e.stopPropagation()}>
-                      {project.sourceUrl && (
-                        <a
-                          href={project.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg bg-accent text-dark hover:bg-accent-hover transition-colors"
-                        >
-                          Source Code
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                          </svg>
-                        </a>
-                      )}
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg border border-white/20 text-white hover:border-accent hover:text-accent transition-colors"
-                        >
-                          View Live
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
-                      <Link
-                        to={`/projects/${project.slug}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg bg-accent text-dark hover:bg-accent-hover transition-colors"
-                      >
-                        Read more
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
+                <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           </section>
