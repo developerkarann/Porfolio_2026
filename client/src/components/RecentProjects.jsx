@@ -19,17 +19,17 @@ export default function RecentProjects() {
         <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
           <img
             src="./moneytorin.png"
-            alt="Moneytor.in"
+            alt="Moneytor Collection CRM"
             className="w-full h-[320px] sm:h-[400px] object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <p className="text-white/70 text-sm">Fintech</p>
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">Moneytor.in</h3>
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">Moneytor Collection CRM</h3>
             </div>
             <a
-              href="https://moneytor.in"
+              href="https://portfolio.moneytor.in/signin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 self-start sm:self-center px-5 py-2.5 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors"

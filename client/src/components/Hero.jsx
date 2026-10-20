@@ -88,9 +88,18 @@ export default function Hero() {
         style={reducedMotion ? undefined : { x: bgX, y: bgY, scale: bgScale }}
       >
         <motion.img
+          src="/main-mb.jpeg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center scale-105 md:hidden"
+          initial={reducedMotion ? false : { scale: 1.12 }}
+          animate={reducedMotion ? undefined : { scale: 1.05 }}
+          transition={{ duration: 14, ease: 'easeOut' }}
+          draggable={false}
+        />
+        <motion.img
           src="/main.jpeg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center scale-105"
+          className="absolute inset-0 hidden h-full w-full object-cover object-center scale-105 md:block"
           initial={reducedMotion ? false : { scale: 1.12 }}
           animate={reducedMotion ? undefined : { scale: 1.05 }}
           transition={{ duration: 14, ease: 'easeOut' }}
